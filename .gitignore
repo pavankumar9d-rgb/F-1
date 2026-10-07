@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Generated hero frame sequence (1200 WebP files, ~180MB — regenerate with extract_1200_webp.js)
+assets/frames-720/
+
+# Build output
+dist/
+
+# Vite cache
+*.timestamp-*.mjs
+
+# ── Excluded per project request ────────────────────────────────
+# AI / agent prompt file
+ANTIGRAVITY_PROMPT.txt
+
+# Video / audio assets used only for showcase render
+*.mp4
+*.mp3
+
+# Green-screen laptop reference image
+watermark-removed-Gemini_Generated_Image_8k6doh8k6doh8k6d.png
+
+# Generated thumbnail
+nocturne_apex_thumbnail.png
+
+# Video production scripts (recording, compositing, green-screen tools)
+scripts/record_smooth_site.cjs
+scripts/record_showcase.cjs
+scripts/record_showcase.js
+scripts/composite_final_4k.cjs
+scripts/compose_4k.bat
+scripts/make-frames.bat
+scripts/make-frames.sh
+scripts/analyze_greenscreen.cjs
+scripts/find_quad.cjs
+scripts/make_mask.cjs
+scripts/test_warp.cjs
+scripts/laptop_transparent.png
+scripts/generate_all_media.js
+scripts/extract_1200_webp.js
+scripts/serve.js
+scripts/verify_site.js
+
+# OS
+.DS_Store
+Thumbs.db

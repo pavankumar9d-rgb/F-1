@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOCTURNE APEX — Nocturnal Formula 1 Proving Ground</title>
+  <meta name="description" content="Nocturne Apex is a private nocturnal motorsport proving ground. Unrestricted midnight track sessions, 1,050 HP hybrid machinery, supersonic aero testing, and encrypted engineering bunkers. Zero compromise.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NOCTURNE APEX — Midnight Formula 1 Proving Ground">
+  <meta property="og:description" content="Eight nocturnal prototypes. One floodlit proving ground. By invitation only.">
+  <meta property="og:image" content="assets/images/apex-circuit.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo-shield.jpg">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#hero" class="skip-link">Skip to content</a>
+
+  <!-- 4% Subtle Procedural Grain Texture Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Telemetry Debug Overlay (?debug=1) -->
+  <div id="debugOverlay" aria-live="polite"></div>
+
+  <!-- =====================================================================
+       1. LOADER SCREEN
+       ===================================================================== -->
+  <aside id="loader" role="dialog" aria-modal="true" aria-label="Loading Experience">
+    <div class="loader-content">
+      <img src="assets/images/logo-shield.jpg" alt="Nocturne Apex Shield" class="loader-logo" width="76" height="76">
+      <h2 class="loader-title">NOCTURNE APEX</h2>
+      <div class="loader-subtitle">Midnight Proving Ground</div>
+      <div class="loader-bar-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-status">INITIALIZING TELEMETRY...</div>
+      <button id="enterBtn" type="button" class="btn btn-primary" aria-label="Enter Nocturne Apex Experience">ENTER NOCTURNE</button>
+    </div>
+  </aside>
+
+  <!-- =====================================================================
+       2. FIXED NAVIGATION
+       ===================================================================== -->
+  <header id="siteNav" role="banner">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-brand" aria-label="Nocturne Apex Home">
+        <img src="assets/images/logo-shield.jpg" alt="Shield" class="brand-shield" width="34" height="34">
+        <span class="brand-name">NOCTURNE APEX</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#grid">The Fleet</a></li>
+          <li><a href="#garage">Skunkworks</a></li>
+          <li><a href="#windtunnel">Supersonic Aero</a></li>
+          <li><a href="#bunker">Mission Control</a></li>
+          <li><a href="#sanctuary">Sanctuary</a></li>
+          <li><a href="#contact">Request Access</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+00000000000" class="nav-phone" aria-label="Direct Operations Line">+00 000 000 000</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Request Access</a>
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobileNav" class="mobile-nav-overlay" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="#grid">The Fleet</a></li>
+      <li><a href="#garage">Skunkworks R&amp;D</a></li>
+      <li><a href="#windtunnel">Supersonic Aero</a></li>
+      <li><a href="#bunker">Mission Control</a></li>
+      <li><a href="#steps">Protocol</a></li>
+      <li><a href="#sanctuary">Sanctuary</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Request Access</a></li>
+    </ul>
+    <div>
+      <a href="#contact" class="btn btn-primary" style="width:100%; text-align:center;">Request Access Pass</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =====================================================================
+         3. HERO SECTION (800vh Canvas Scrub Engine)
+         ===================================================================== -->
+    <section id="hero" aria-label="Cinematic Film Experience">
+      <div class="sticky-stage">
+        <!-- Canvas Frame Sequence -->
+        <canvas id="heroCanvas" width="1920" height="1080"></canvas>
+
+        <!-- Fallback Video for Reduced Motion -->
+        <video id="heroVideoFallback" src="assets/video/hero.mp4" poster="assets/video/poster.jpg" muted loop playsinline></video>
+
+        <!-- Subtle HUD Telemetry Overlay -->
+        <div class="hero-hud" aria-hidden="true">
+          <!-- Top Telemetry Row -->
+          <div class="hud-top">
+            <div class="hud-rec">
+              <span class="rec-dot"></span>
+              <span id="hudRecTime">REC 00:00:00:00</span>
+            </div>
+            <div class="hud-location">NOCTURNE APEX // NOCTURNAL PROVING GROUND</div>
+          </div>
+
+          <!-- Aesthetic HUD Brackets -->
+          <div class="hud-corner tl"></div>
+          <div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div>
+          <div class="hud-corner br"></div>
+
+          <!-- Bottom Telemetry Row -->
+          <div class="hud-bottom">
+            <div id="hudFrame" class="hud-frame-counter">FRAME 0001 / 1200</div>
+            
+            <div class="hud-telemetry">
+              <div id="hudSpeed" class="hud-speed">CURRENT SPEED: 0 KM/H</div>
+            </div>
+
+            <div class="hud-chapter-indicator">
+              <span id="hudChapterText" class="hud-chapter-text">01 SKUNKWORKS ASSEMBLY</span>
+              <div class="hud-progress-track">
+                <div id="hudProgressFill" class="hud-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter Narrative Cards -->
+        <div class="hero-overlays">
+          <div class="hero-chapter-card active" data-chapter="0">
+            <span class="chapter-prefix">Phase 01 // Skunkworks Assembly</span>
+            <h1>NOCTURNE APEX</h1>
+            <p>Eight prototypes. One midnight circuit. Zero compromise. Formula 1 hybrid chassis engineered for the nocturnal driver.</p>
+          </div>
+
+          <div class="hero-chapter-card" data-chapter="1">
+            <span class="chapter-prefix">Phase 02 // Supersonic Sprint</span>
+            <h2>Thermal Ascent</h2>
+            <p>Full throttle along floodlit asphalt straights. Carbon-carbon brakes glowing cherry red under high-G deceleration.</p>
+          </div>
+
+          <div class="hero-chapter-card" data-chapter="2">
+            <span class="chapter-prefix">Phase 03 // Cockpit Telemetry</span>
+            <h2>Driver Synchronization</h2>
+            <p>Bespoke resin monocoque, paddle-shift hydraulic valving, real-time biometrics piped straight to mission control.</p>
+          </div>
+
+          <div class="hero-chapter-card" data-chapter="3">
+            <span class="chapter-prefix">Phase 04 // Proving Ground Arrival</span>
+            <h2>Subterranean Paddock</h2>
+            <p>Arrive via private rotorcraft directly onto the asphalt staging area. Temperature-controlled pit garages humming.</p>
+          </div>
+
+          <div class="hero-chapter-card" data-chapter="4">
+            <span class="chapter-prefix">Phase 05 // Midnight Grid</span>
+            <h2>The Floodlit Grid</h2>
+            <p>Tire blankets removed. 1,050 horsepower primed on high-octane fuel. Radio check complete: green flag inbound.</p>
+          </div>
+        </div>
+
+        <!-- Scroll down invitation -->
+        <div class="hero-scroll-prompt">
+          <span>Scroll To Scrub</span>
+          <div class="scroll-line-anim"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. TEXT MARQUEE
+         ===================================================================== -->
+    <section class="marquee-section hairline-top hairline-bottom" aria-label="Chassis Roster">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          <span>Nocturne 01</span><span class="marquee-dot"></span>
+          <span>Apex Vulcan</span><span class="marquee-dot"></span>
+          <span>Phantom V8</span><span class="marquee-dot"></span>
+          <span>Neon Papaya</span><span class="marquee-dot"></span>
+          <span>Vector Zero</span><span class="marquee-dot"></span>
+          <span>Hyperion 06</span><span class="marquee-dot"></span>
+          <span>Ghost Apex</span><span class="marquee-dot"></span>
+          <span>Chronos 08</span><span class="marquee-dot"></span>
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+          <span>Nocturne 01</span><span class="marquee-dot"></span>
+          <span>Apex Vulcan</span><span class="marquee-dot"></span>
+          <span>Phantom V8</span><span class="marquee-dot"></span>
+          <span>Neon Papaya</span><span class="marquee-dot"></span>
+          <span>Vector Zero</span><span class="marquee-dot"></span>
+          <span>Hyperion 06</span><span class="marquee-dot"></span>
+          <span>Ghost Apex</span><span class="marquee-dot"></span>
+          <span>Chronos 08</span><span class="marquee-dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. THE GARAGE / SKUNKWORKS
+         ===================================================================== -->
+    <section id="garage" class="section-spacing hairline-bottom" aria-labelledby="garageTitle">
+      <div class="garage-backdrop" aria-hidden="true"></div>
+      <div class="garage-gradient-overlay" aria-hidden="true"></div>
+      
+      <div class="container garage-content">
+        <div class="garage-header reveal-up">
+          <span class="mono-tag">Skunkworks Division</span>
+          <h2 id="garageTitle" style="margin-top:0.75rem;">Anatomy of <span class="gold-accent">Nocturne 01</span></h2>
+          <p style="margin-top:0.5rem; max-width:640px; margin-left:auto; margin-right:auto;">
+            Every prototype is prepared inside our subterranean facility by Grand Prix race mechanics to match your exact biometric telemetry.
+          </p>
+        </div>
+
+        <div class="garage-car-stage reveal-up">
+          <img src="assets/images/car-cutout.png" alt="Nocturne Single Seater Chassis Cutout" class="garage-car-img" width="669" height="373">
+          
+          <!-- Spec Hotspots -->
+          <div class="spec-callout spec-1" aria-hidden="true">
+            <span class="spec-pin"></span>
+            <span class="spec-val">1,020 HP</span>
+            <span class="spec-lbl">Hybrid Turbo V6</span>
+          </div>
+
+          <div class="spec-callout spec-2" aria-hidden="true">
+            <span class="spec-pin"></span>
+            <span class="spec-val">2.3 SEC</span>
+            <span class="spec-lbl">0-100 KM/H Launch</span>
+          </div>
+
+          <div class="spec-callout spec-3" aria-hidden="true">
+            <span class="spec-pin"></span>
+            <span class="spec-val">355 KM/H</span>
+            <span class="spec-lbl">Top Circuit Velocity</span>
+          </div>
+
+          <div class="spec-callout spec-4" aria-hidden="true">
+            <span class="spec-pin"></span>
+            <span class="spec-val">FIA MONOCOQUE</span>
+            <span class="spec-lbl">Molded Pre-Preg Carbon</span>
+          </div>
+        </div>
+
+        <div class="reveal-up" style="margin-top:2rem;">
+          <a href="#grid" class="btn btn-outline">Inspect Fleet Allocation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. THE FLEET GRID
+         ===================================================================== -->
+    <section id="grid" class="section-spacing hairline-bottom" aria-labelledby="gridTitle">
+      <div class="container">
+        <div class="grid-header-row reveal-up">
+          <div>
+            <span class="mono-tag">Proving Ground Machinery</span>
+            <h2 id="gridTitle" style="margin-top:0.5rem;">Select <span class="gold-accent">Your Weapon</span></h2>
+            <p style="margin-top:0.4rem;">Eight race-prepared machines configured for nocturnal high-downforce driving.</p>
+          </div>
+
+          <!-- Filter & Sort Controls -->
+          <div class="grid-controls">
+            <button type="button" class="filter-chip active" data-filter="all">All (8)</button>
+            <button type="button" class="filter-chip" data-filter="Hybrid V6">Hybrid V6</button>
+            <button type="button" class="filter-chip" data-filter="V8 Classic">V8 Classic</button>
+            <button type="button" class="filter-chip" data-filter="Simulator Included">Simulator Included</button>
+            
+            <select id="sortSelect" class="sort-select" aria-label="Sort Machinery">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid Container -->
+        <div id="carsGridContainer" class="cars-grid-container reveal-up" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         7. SUPERSONIC WIND TUNNEL
+         ===================================================================== -->
+    <section id="windtunnel" class="section-spacing hairline-bottom" aria-labelledby="windtunnelTitle">
+      <div class="container">
+        <div class="windtunnel-feature-grid reveal-up">
+          <div class="windtunnel-img-wrap">
+            <img src="assets/images/apex-windtunnel.jpg" alt="Supersonic Aero Wind Tunnel" class="windtunnel-img" loading="lazy">
+          </div>
+          <div>
+            <span class="mono-tag">Aerodynamic Validation</span>
+            <h2 id="windtunnelTitle" style="margin-top:0.75rem;">300 KM/H <br><span class="gold-accent">Ground Effect Tunnel</span></h2>
+            <p style="margin-top:0.75rem;">
+              Before taking the track at midnight, your chassis is subjected to laser particle streamline analysis in our rolling-road wind tunnel.
+            </p>
+            <p style="margin-top:0.5rem;">
+              Front wing angle of attack, rear diffuser beam stalling, and halo fairing turbulence are tuned specifically to your lap pace.
+            </p>
+            <div style="margin-top:2rem;">
+              <a href="#bunker" class="btn btn-outline btn-sm">Explore Telemetry Bunker</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         8. STATS SECTION
+         ===================================================================== -->
+    <section id="stats" class="section-spacing hairline-bottom" aria-label="Key Performance Indicators">
+      <div class="container">
+        <div class="stats-grid reveal-up">
+          <div class="stat-item">
+            <div class="stat-num" data-target="8">8</div>
+            <div class="stat-label">Prototypes Curated</div>
+            <div class="stat-desc">Maintained in race-ready trim 365 nights a year.</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num" data-target="24/7">24/7</div>
+            <div class="stat-label">Flight Operations</div>
+            <div class="stat-desc">Direct private heli-shuttle straight to the subterranean pit line.</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num" data-target="0%">0%</div>
+            <div class="stat-label">Zero Marine Distractions</div>
+            <div class="stat-desc">100% focused on asphalt lap times, apex speed, and telemetry.</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num" data-target="1,050">1,050</div>
+            <div class="stat-label">Peak Horsepower</div>
+            <div class="stat-desc">Twin-scroll turbo hybrid engines with instant MGU-K energy boost.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         9. MISSION CONTROL TELEMETRY BUNKER
+         ===================================================================== -->
+    <section id="bunker" class="section-spacing hairline-bottom" aria-labelledby="bunkerTitle">
+      <div class="container">
+        <div class="bunker-grid reveal-up">
+          <div>
+            <span class="mono-tag">Real-Time Data Link</span>
+            <h2 id="bunkerTitle" style="margin-top:0.75rem;">Subterranean <br><span class="gold-accent">Mission Control</span></h2>
+            <p style="margin-top:0.75rem;">
+              While you drive into the night, three dedicated race engineers track your steering angle, brake pressure, tire carcass thermals, and differential lock.
+            </p>
+            <p style="margin-top:0.5rem;">
+              Instant radio debriefs between stints let you shave tenths of a second off every apex corner.
+            </p>
+            <div style="margin-top:2rem;">
+              <a href="#contact" class="btn btn-primary btn-sm">Reserve Session Telemetry</a>
+            </div>
+          </div>
+
+          <div class="bunker-img-wrap">
+            <img src="assets/images/apex-telemetry.jpg" alt="Formula 1 Telemetry Control Bunker" class="bunker-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         10. SIX STEPS TO THE PROVING GROUND
+         ===================================================================== -->
+    <section id="steps" class="section-spacing hairline-bottom" aria-labelledby="stepsTitle">
+      <div class="container">
+        <div class="reveal-up">
+          <span class="mono-tag">Entry Protocol</span>
+          <h2 id="stepsTitle" style="margin-top:0.75rem;">Six Steps <span class="gold-accent">To The Midnight Grid</span></h2>
+          <p style="margin-top:0.4rem;">The rigorous onboarding protocol required to take the wheel.</p>
+        </div>
+
+        <div class="steps-container reveal-up">
+          <div class="step-card">
+            <div class="step-img-wrap">
+              <img src="assets/images/step-01-plate.jpg" alt="Security Plate" class="step-img" loading="lazy" width="400" height="250">
+            </div>
+            <div class="step-body">
+              <span class="step-num">01</span>
+              <h3 class="step-title">Register Dossier</h3>
+              <p class="step-desc">Submit your driving telemetry background and credential clearance through our encrypted portal.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-img-wrap">
+              <img src="assets/images/step-02-pass.jpg" alt="Pass Credentials" class="step-img" loading="lazy" width="400" height="250">
+            </div>
+            <div class="step-body">
+              <span class="step-num">02</span>
+              <h3 class="step-title">Receive Encrypted Pass</h3>
+              <p class="step-desc">A laser-etched black titanium paddock token delivered via secure courier prior to arrival.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-img-wrap">
+              <img src="assets/images/step-03-seat.jpg" alt="Seat Pouring" class="step-img" loading="lazy" width="400" height="250">
+            </div>
+            <div class="step-body">
+              <span class="step-num">03</span>
+              <h3 class="step-title">Seat Insert Pouring</h3>
+              <p class="step-desc">Molding of your beaded resin seat insert and 3D laser calibration of the carbon pedal box.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-img-wrap">
+              <img src="assets/images/step-04-brief.jpg" alt="Engineer Brief" class="step-img" loading="lazy" width="400" height="250">
+            </div>
+            <div class="step-body">
+              <span class="step-num">04</span>
+              <h3 class="step-title">Sim &amp; Telemetry Brief</h3>
+              <p class="step-desc">Simulate nocturnal track braking points on our 6-DOF hydraulic motion simulator with your race engineer.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-img-wrap">
+              <img src="assets/images/step-05-choose.jpg" alt="Choose Car" class="step-img" loading="lazy" width="400" height="250">
+            </div>
+            <div class="step-body">
+              <span class="step-num">05</span>
+              <h3 class="step-title">Chassis Scrutineering</h3>
+              <p class="step-desc">Walk onto the dark asphalt pit apron where your chosen prototype stands preheated on electric tire warmers.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-img-wrap">
+              <img src="assets/images/step-06-return.jpg" alt="Return to Bunker" class="step-img" loading="lazy" width="400" height="250">
+            </div>
+            <div class="step-body">
+              <span class="step-num">06</span>
+              <h3 class="step-title">Telemetry Debrief</h3>
+              <p class="step-desc">Return to the private underground lounge to analyze overlaid telemetry curves, apex apex velocity, and onboard 4K logs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         11. DRIVER SANCTUARY & PROVING GROUND
+         ===================================================================== -->
+    <section id="sanctuary" class="section-spacing hairline-bottom" aria-labelledby="sanctuaryTitle">
+      <div class="container">
+        <div class="reveal-up">
+          <span class="mono-tag">Architectural Refuge</span>
+          <h2 id="sanctuaryTitle" style="margin-top:0.75rem;">The Subterranean <span class="gold-accent">Sanctuary</span></h2>
+          <p style="margin-top:0.4rem;">Brutalist concrete architecture, circadian lighting, and soundproof recovery pods.</p>
+        </div>
+
+        <div class="sanctuary-grid reveal-up">
+          <div class="sanctuary-card">
+            <img src="assets/images/apex-quarters.jpg" alt="Private Driver Quarters" class="sanctuary-img" loading="lazy">
+            <div class="sanctuary-overlay">
+              <h3>Driver Quarters</h3>
+              <p>Minimalist board-formed concrete suites with integrated biometric consoles.</p>
+            </div>
+          </div>
+
+          <div class="sanctuary-card">
+            <img src="assets/images/apex-circuit.jpg" alt="Nocturnal Floodlit Circuit" class="sanctuary-img" loading="lazy">
+            <div class="sanctuary-overlay">
+              <h3>The Midnight Circuit</h3>
+              <p>5.4 kilometers of FIA Grade 1 asphalt illuminated by stadium floodlights.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         12. ENTRY CRITERIA
+         ===================================================================== -->
+    <section id="criteria" class="section-spacing hairline-bottom" aria-labelledby="critTitle">
+      <div class="container">
+        <div class="reveal-up" style="text-align:center; max-width:620px; margin:0 auto;">
+          <span class="mono-tag">Safety Clearance</span>
+          <h2 id="critTitle" style="margin-top:0.75rem;">Driver <span class="gold-accent">Entry Criteria</span></h2>
+          <p style="margin-top:0.4rem;">Machines of this caliber require sharp mental focus and demonstrable track competence.</p>
+        </div>
+
+        <div class="req-grid reveal-up">
+          <div class="req-card">
+            <div class="req-val">25+</div>
+            <h3 style="font-size:1.2rem; margin-bottom:0.5rem;">Minimum Age</h3>
+            <p class="req-desc">Drivers must have reached 25 years of age prior to their scheduled testing window.</p>
+          </div>
+
+          <div class="req-card">
+            <div class="req-val">Track Record</div>
+            <h3 style="font-size:1.2rem; margin-bottom:0.5rem;">Track Experience</h3>
+            <p class="req-desc">Prior single-seater or GT3 high-performance track-day experience verified by our instructors.</p>
+          </div>
+
+          <div class="req-card">
+            <div class="req-val">Identity &amp; Hold</div>
+            <h3 style="font-size:1.2rem; margin-bottom:0.5rem;">Security Hold</h3>
+            <p class="req-desc">Pre-authorized security hold and government identity verification required before seat fitment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         13. TESTIMONIALS
+         ===================================================================== -->
+    <section id="testimonials" class="section-spacing hairline-bottom" aria-labelledby="testTitle">
+      <div class="container">
+        <div class="reviews-header reveal-up">
+          <div class="reviews-rating" aria-label="5 out of 5 stars">
+            <span>★★★★★</span>
+            <span>5.0 / 5.0 RATING</span>
+          </div>
+          <h2 id="testTitle">Debrief From <span class="gold-accent">The Paddock</span></h2>
+          <p style="margin-top:0.5rem;">Words from drivers who have taken the midnight apex.</p>
+        </div>
+
+        <div class="reviews-grid reveal-up">
+          <div class="review-card">
+            <p class="review-text">“The sensory overload of driving a 1,020 HP hybrid single-seater in absolute midnight darkness under stadium lights is unmatched. No tourists, no ocean distractions — just pure racing focus.”</p>
+            <div class="review-author">
+              <div class="review-avatar">VR</div>
+              <div>
+                <div class="review-meta-name">V. Romanov</div>
+                <div class="review-meta-loc">Geneva & Tokyo</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <p class="review-text">“The engineers in the bunker dialed in my front wing flaps within three laps. Shaved 1.8 seconds off my baseline time before 2:00 AM. Best motorsport setup in existence.”</p>
+            <div class="review-author">
+              <div class="review-avatar">CS</div>
+              <div>
+                <div class="review-meta-name">C. Sterling</div>
+                <div class="review-meta-loc">London & Silicon Valley</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <p class="review-text">“Brutalist architecture, dark concrete, raw gold accents, and pure high-downforce machinery. The feeling of stepping out of the car straight into the recovery sanctuary is unreal.”</p>
+            <div class="review-author">
+              <div class="review-avatar">MB</div>
+              <div>
+                <div class="review-meta-name">M. Bergmann</div>
+                <div class="review-meta-loc">Munich & Zurich</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         14. CONTACT / ACCESS DOSSIER PORTAL
+         ===================================================================== -->
+    <section id="contact" class="section-spacing hairline-bottom" aria-labelledby="contactTitle">
+      <div class="contact-bg" aria-hidden="true"></div>
+      <div class="container contact-inner">
+        <!-- Left Column -->
+        <div class="reveal-up">
+          <span class="mono-tag">Initiate Candidacy</span>
+          <h2 id="contactTitle" style="margin-top:0.75rem;">Your Flight Window <br><span class="gold-accent">Begins Here.</span></h2>
+          <p style="margin-top:0.75rem;">
+            Paddock allocations are limited to 12 drivers per quarter to preserve circuit telemetry bandwidth. Submit your details for immediate review.
+          </p>
+
+          <ul class="contact-checklist">
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Dedicated former Formula 1 race engineer and telemetry specialist assigned to your session.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Custom molded carbon seat insert and bespoke FIA Nomex race suit included.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Encrypted telecommunications and private rotorcraft helipad transfer options.</span>
+            </li>
+          </ul>
+
+          <div style="margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:1.25rem;">
+            <a href="https://wa.me/000000000?text=Hello%20Nocturne%20Apex%2C%20I%20would%20like%20to%20inquire%20about%20a%20private%20proving%20ground%20session." target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">WhatsApp Concierge</a>
+            <a href="mailto:ops@nocturne-apex.com?subject=Nocturne%20Apex%20Flight%20Window%20Inquiry" class="btn btn-outline btn-sm">Email Direct</a>
+          </div>
+        </div>
+
+        <!-- Right Column Form -->
+        <div class="contact-card reveal-up">
+          <form id="accessRequestForm" novalidate aria-label="Access Request Form">
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="fullName" class="form-label">Full Name *</label>
+                <input type="text" id="fullName" name="name" class="form-input" placeholder="e.g. Sterling Archer" required>
+                <span class="form-error-msg">Please provide your full name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="emailAddress" class="form-label">Email Address *</label>
+                <input type="email" id="emailAddress" name="email" class="form-input" placeholder="driver@sanctuary.com" required>
+                <span class="form-error-msg">Please provide a valid email address.</span>
+              </div>
+            </div>
+
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="phoneNumber" class="form-label">Direct Phone *</label>
+                <input type="tel" id="phoneNumber" name="phone" class="form-input" placeholder="+44 7000 000000" required>
+                <span class="form-error-msg">Please provide a contact phone number.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="preferredDates" class="form-label">Testing Window</label>
+                <input type="date" id="preferredDates" name="date" class="form-input" value="2026-06-15">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="carSelect" class="form-label">Chassis Selection *</label>
+                <select id="carSelect" name="car" class="form-select" required>
+                  <option value="">-- Choose Your Chassis --</option>
+                </select>
+                <span class="form-error-msg">Please select your preferred chassis.</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientMessage" class="form-label">Prior Track History / Notes</label>
+                <textarea id="clientMessage" name="message" class="form-textarea" placeholder="Detail any previous single-seater, GT3, or prototype track hours, helicopter arrival requests, or biometric requirements..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.75rem;">Dispatch Candidate Dossier</button>
+          </form>
+
+          <!-- Success Box -->
+          <div id="formSuccessBox" class="form-success-box" aria-live="polite">
+            <div class="success-icon">✓</div>
+            <h3 style="margin-bottom:0.5rem; color:var(--cream);">Dossier Registered</h3>
+            <p id="successSummary" style="font-size:0.95rem; margin-bottom:1.5rem;">Your candidacy has been received. Nocturne flight operations will contact you directly within two hours.</p>
+            <a href="#hero" class="btn btn-outline btn-sm">Return To Top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       15. FOOTER
+       ===================================================================== -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top reveal-up">
+        <div class="footer-brand-col">
+          <div style="display:flex; align-items:center; gap:0.85rem;">
+            <img src="assets/images/logo-shield.jpg" alt="Logo" style="width:38px; height:38px; border-radius:50%; border:1px solid var(--gold);">
+            <span style="font-family:var(--font-serif); font-size:1.4rem; color:var(--cream);">NOCTURNE APEX</span>
+          </div>
+          <p>
+            The pinnacle of nocturnal high-performance motorsport. Eight hybrid Formula 1 single-seaters maintained for unrestricted midnight testing.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Proving Ground</div>
+          <p style="font-size:0.85rem; line-height:1.7;">
+            Nocturne Apex Airfield<br>
+            Subterranean Sector 07<br>
+            High Desert Aerodrome<br>
+            United States
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Flight Operations</div>
+          <ul class="footer-links">
+            <li><a href="tel:+00000000000">+00 000 000 000</a></li>
+            <li><a href="mailto:ops@nocturne-apex.com">ops@nocturne-apex.com</a></li>
+            <li><a href="https://wa.me/000000000" target="_blank" rel="noopener noreferrer">WhatsApp Duty Desk</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Index</div>
+          <ul class="footer-links">
+            <li><a href="#grid">The Fleet</a></li>
+            <li><a href="#garage">Skunkworks</a></li>
+            <li><a href="#windtunnel">Supersonic Aero</a></li>
+            <li><a href="#bunker">Mission Control</a></li>
+            <li><a href="#contact">Private Candidacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 NOCTURNE APEX GP. All rights reserved. Private Proving Ground Syndicate.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="#" style="color:var(--muted); text-decoration:none;">Telemetry Privacy</a>
+          <a href="#" style="color:var(--muted); text-decoration:none;">Circuit Liability</a>
+          <a href="#" style="color:var(--muted); text-decoration:none;">FIA Scrutineering Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Bar -->
+  <aside class="mobile-sticky-bar" aria-label="Mobile Direct Actions">
+    <a href="tel:+00000000000" class="btn btn-outline btn-sm" style="font-size:0.7rem;">Call Operations</a>
+    <a href="https://wa.me/000000000?text=Hello%20Nocturne%20Apex%2C%20I%20wish%20to%20inquire%20about%20a%20midnight%20proving%20session." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="font-size:0.7rem;">WhatsApp</a>
+  </aside>
+
+  <!-- Vite TypeScript Entry Point -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
